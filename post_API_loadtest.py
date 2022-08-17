@@ -4,7 +4,10 @@ import json
 
 
 class loadtest_post_api(HttpUser):
-    wait_time = between(1, 60)
+    wait_time = between(1, 5)
+    connection_timeout = 120.0
+    network_timeout = 120.0
+
 
     @task
     def test_event(self):
